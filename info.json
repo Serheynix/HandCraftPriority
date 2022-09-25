@@ -1,0 +1,10 @@
+{"name": "HandCraftPriority",
+ "version": "0.2.0",
+ "title": "Hand Craft Priority",
+ "contact": "https://mods.factorio.com/mod/HandCraftPriority/discussion",
+ "author": "SerhiiS",
+ "homepage": "https://github.com/Serheynix/HandCraftPriority",
+ "description": "Improves hand crafting. Doesn't overflow your inventory\n- Press CTRL+[ Demote first item to rear\n- Press CTRL+] Promote last crafted item to front\n- Press SHIFT + BACKSPACE Reset the crafting queue",
+ "dependencies": ["base >= 0.7"],
+ "factorio_version": "1.1"
+}
