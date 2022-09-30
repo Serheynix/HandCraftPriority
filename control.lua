@@ -1,5 +1,5 @@
 script.on_event(defines.events.on_player_cancelled_crafting, function(event)
-    if global.HandCraftPriority.reset_crafting or global.HandCraftPriority.no_action then
+    if global.HandCraftPriority and (global.HandCraftPriority.reset_crafting or global.HandCraftPriority.no_action) then
         return
     end
     local player = game.players[event.player_index]

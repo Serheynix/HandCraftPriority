@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 30 September 2022
+  Bugfixes:
+    - Fix bug. Details: https://mods.factorio.com/mod/HandCraftPriority/discussion/63367daf671597db3d4f6587
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 25 September 2022
+  Features:
+    - Add first public release

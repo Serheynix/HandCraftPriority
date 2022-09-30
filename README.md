@@ -1,5 +1,5 @@
 # Hand Craft Priority
-Improves hand crafting. Doesn't overflow your inventory
+Improves hand crafting. If your inventory fills up while crafting, canceling the craft will not overflow your inventory
 
 ### Download
 Source code for factorio mod called HandCraftPriority
