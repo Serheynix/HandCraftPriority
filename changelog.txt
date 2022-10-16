@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 16 October 2022
+  Features:
+    - Added multiplayer support
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 30 September 2022
   Bugfixes:
@@ -7,4 +12,4 @@ Date: 30 September 2022
 Version: 0.2.0
 Date: 25 September 2022
   Features:
-    - Add first public release
+    - First public release added
