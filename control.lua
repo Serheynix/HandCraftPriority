@@ -2,9 +2,31 @@ local this = {
     players = {}
 }
 
+local function validate_player(player)
+    if not player then
+        return false
+    end
+    if not player.valid then
+        return false
+    end
+    if not player.character then
+        return false
+    end
+    if not player.connected then
+        return false
+    end
+    if not game.players[player.name] then
+        return false
+    end
+    return true
+end
+
 script.on_event(defines.events.on_player_cancelled_crafting, function(event)
     local player = game.players[event.player_index]
     local player_config = this.players[event.player_index]
+    if not validate_player(player) then
+        return
+    end
     if player_config and (player_config.reset_crafting or no_action) then
         return
     end
@@ -20,6 +42,9 @@ end)
 script.on_event(defines.events.on_player_main_inventory_changed, function(event)
     local player = game.players[event.player_index]
     local player_config = this.players[event.player_index]
+    if not validate_player(player) then
+        return
+    end
     if not player_config or player_config.no_action then
         return
     end
@@ -47,6 +72,9 @@ end)
 
 script.on_event("reset-craft", function(event)
     local player = game.players[event.player_index]
+    if not validate_player(player) then
+        return
+    end
     if player.crafting_queue_size > 0 then
         if player.character.character_inventory_slots_bonus == 0 then
             player.character.character_inventory_slots_bonus = 100
@@ -63,6 +91,9 @@ end)
 
 script.on_event("promote-craft", function(event)
     local player = game.players[event.player_index]
+    if not validate_player(player) then
+        return
+    end
     if player.crafting_queue_size > 1 then
         local inventory_bonus = player.character.character_inventory_slots_bonus
         local last_craft = player.crafting_queue[player.crafting_queue_size]
@@ -96,6 +127,9 @@ end)
 
 script.on_event("demote-craft", function(event)
     local player = game.players[event.player_index]
+    if not validate_player(player) then
+        return
+    end
     if player.crafting_queue_size > 1 then
         local inventory_bonus = player.character.character_inventory_slots_bonus
         local last_craft = player.crafting_queue[player.crafting_queue_size]
